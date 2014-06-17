@@ -1,4 +1,4 @@
 class LoginsController < ApplicationController
-  def index
+  def show
   end
 end
