@@ -7,6 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% if current_user %>
+  <p id="user">
+    Logged in as
+    <%= current_user.username %>
+  </p>
+<% else %>
+  <p id="login">
+    You're not logged in.
+    <%= link_to 'Log in here!', login_path %>
+  </p>
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
 
