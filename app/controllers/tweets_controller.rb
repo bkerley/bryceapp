@@ -17,10 +17,6 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new
   end
 
-  # GET /tweets/1/edit
-  def edit
-  end
-
   # POST /tweets
   # POST /tweets.json
   def create
@@ -34,20 +30,6 @@ class TweetsController < ApplicationController
         format.json { render :show, status: :created, location: @tweet }
       else
         format.html { render :new }
-        format.json { render json: @tweet.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /tweets/1
-  # PATCH/PUT /tweets/1.json
-  def update
-    respond_to do |format|
-      if @tweet.update(tweet_params)
-        format.html { redirect_to @tweet, notice: 'Tweet was successfully updated.' }
-        format.json { render :show, status: :ok, location: @tweet }
-      else
-        format.html { render :edit }
         format.json { render json: @tweet.errors, status: :unprocessable_entity }
       end
     end
