@@ -11,6 +11,7 @@
   <tbody>
     <% @tweets.each do |tweet| %>
       <tr>
+        <td><%= tweet.user.try(:username) %></td>
         <td><%= tweet.body %></td>
         <td>
           <%= link_to tweet do %>
