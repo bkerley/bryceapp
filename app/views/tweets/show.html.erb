@@ -1,6 +1,8 @@
 <p>
-  <strong>Body:</strong>
   <%= @tweet.body %>
+</p>
+<p>
+  <%= @tweet.created_at %>
 </p>
 
 <%= link_to 'Edit', edit_tweet_path(@tweet) %> |
